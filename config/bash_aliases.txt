@@ -1,0 +1,13 @@
+alias rr='pipx run --spec ranger-fm ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
+
+# My prefered git shortcuts
+alias gs='git status'
+alias gf='git fetch --all --prune'
+alias gc='git commit -m '
+alias gl='git log'
+alias gb='git branch '
+alias gco='git checkout '
+alias gd='git diff'
+
+
+alias vi='nvim'
