@@ -57,3 +57,5 @@ if ! hash pipx 2>/dev/null; then
   sudo pipx ensurepath --global # optional to allow pipx actions with --global argument
   pipx run --spec ranger-fm ranger
 fi
+
+git config --global core.editor "nvim"
