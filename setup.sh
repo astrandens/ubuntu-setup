@@ -36,10 +36,8 @@ else
   cd ~/.fzf && git pull && ./install
 fi
 
-rm ~/.bash_aliases
-rm ~/.bashrc
-cat ~/ubuntu-setup/config/bash_aliases.txt >>~/.bash_aliases
-cat ~/ubuntu-setup/config/bashrc.txt >>~/.bashrc
+cat ~/ubuntu-setup/config/bash_aliases.txt >~/.bash_aliases
+cat ~/ubuntu-setup/config/bashrc.txt >~/.bashrc
 source ~/.bashrc
 
 # Install nvm and npm
