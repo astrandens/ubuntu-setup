@@ -1,14 +1,13 @@
 alias rr='pipx run --spec ranger-fm ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 
 # My prefered git shortcuts
+alias gaa='git add .'
 alias gs='git status'
 alias gf='git fetch --all --prune'
 alias gc='git commit -m '
 alias gl='git log'
 alias gb='git branch '
-alias gco='git checkout '
+alias gba='git branch --all'
 alias gd='git diff'
-alias gcan='git commit --amend -no-edit'
-
-
-alias vi='nvim'
+alias gca='git commit --amend '
+alias gcan='git commit --amend --no-edit'
