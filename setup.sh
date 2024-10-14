@@ -27,6 +27,15 @@ if [ -d ~/.config/nvim ]; then
   sudo mv ~/.local/state/nvim{,.bak}
   sudo mv ~/.cache/nvim{,.bak}
 fi
+
+wget https://luarocks.org/releases/luarocks-3.11.1.tar.gz
+tar zxpf luarocks-3.11.1.tar.gz
+cd luarocks-3.11.1
+./configure && make && sudo make install
+sudo luarocks install luasocket
+
+sudo apt-get install ripgrep
+
 cp -r ~/ubuntu-setup/config/nvim ~/.config/nvim
 
 if [ ! -d ~/.fzf ]; then
