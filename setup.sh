@@ -60,10 +60,14 @@ if ! hash nvm 2>/dev/null; then
 
   # verifies the right npm version is in the environment
   npm -v # should print `10.8.2`
+  pip install tree-sitter
+  pip install --upgrade pynvim
+  npm install -g tree-sitter-cli
+  npm install -g neovim
 fi
-pip install tree-sitter
-pip install --upgrade pynvim
-npm install tree-sitter-cli
+
+# Install clipboard capture
+sudo apt install xclip
 
 # Ref: https://pipx.pypa.io/stable/
 if ! hash pipx 2>/dev/null; then
@@ -74,7 +78,7 @@ if ! hash pipx 2>/dev/null; then
   pipx run --spec ranger-fm ranger
 fi
 
-git config --global core.editor "nvim"
+git config --global core.editor "vi"
 
 if ! hash lazygit 2>/dev/null; then
   # Ref: https://github.com/jesseduffield/lazygit?tab=readme-ov-file#installation
