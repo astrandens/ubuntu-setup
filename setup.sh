@@ -28,13 +28,16 @@ if [ -d ~/.config/nvim ]; then
   sudo mv ~/.cache/nvim{,.bak}
 fi
 
+# Lua and Luarocks
+sudo apt install lua5.1 liblua5.1-dev
 wget https://luarocks.org/releases/luarocks-3.11.1.tar.gz
 tar zxpf luarocks-3.11.1.tar.gz
-cd luarocks-3.11.1 || return
-./configure && make && sudo make install
+cd luarocks-3.11.1 && ./configure && make && sudo make install && cd .. || return
 sudo luarocks install luasocket
+rm -rf luarocks-3*
 
 sudo apt-get install ripgrep
+sudo apt install fd-find
 
 cp -r ~/ubuntu-setup/config/nvim ~/.config/nvim
 
