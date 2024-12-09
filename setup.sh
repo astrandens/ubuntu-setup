@@ -8,7 +8,7 @@ if [ ! -f ~/.ssh/id_ed25519 ]; then
 fi
 
 # Pre-req for nvim
-sudo apt-get install ninja-build gettext cmake unzip curl build-essential
+sudo apt-get install ninja-build gettext cmake unzip curl build-essential python3-pip
 # Clone, build, and install neovim
 
 if [ ! -d ~/neovim ]; then
@@ -57,6 +57,7 @@ if ! hash nvm 2>/dev/null; then
   echo "Could not find nvm, installing it"
   # Ref: https://github.com/nvm-sh/nvm?tab=readme-ov-file
   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh | bash
+
   nvm install 20
   # verifies the right Node.js version is in the environment
   node -v # should print `v20.18.0`
