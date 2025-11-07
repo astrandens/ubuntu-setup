@@ -9,7 +9,7 @@ return {
       -- Use the "*" filetype to run linters on all filetypes.
       -- ['*'] = { 'global linter' },
       -- Use the "_" filetype to run linters on filetypes that don't have other linters configured.
-      -- ['_'] = { 'fallback linter' },
+      ["_"] = { "fallback linter" },
       -- ["*"] = { "typos" },
     },
     -- LazyVim extension to easily override linter options
@@ -78,7 +78,7 @@ return {
       names = vim.tbl_filter(function(name)
         local linter = lint.linters[name]
         if not linter then
-          LazyVim.warn("Linter not found: " .. name, { title = "nvim-lint" })
+          LazyVim.debug("Linter not found: " .. name, { title = "nvim-lint" })
         end
         return linter and not (type(linter) == "table" and linter.condition and not linter.condition(ctx))
       end, names)
